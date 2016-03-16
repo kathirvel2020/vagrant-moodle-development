@@ -27,5 +27,5 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.cpus = 1
   end
 
-  # config.vm.provision :shell, path: "provision.sh"
+  config.vm.provision :shell, path: "provision.sh"
 end
