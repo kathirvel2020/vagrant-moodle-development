@@ -90,43 +90,43 @@ Local Files:
 
 Moodle will be available at https://dev.local/
 
-# TIP: Avoiding self-signed SSL certificate warnings
+## TIP: Avoiding self-signed SSL certificate warnings
 
 To avoid the warning displayed by your web browser, go to the website at https://dev.local and:
 
-Chrome
-# Click on Advanced, then Proceed to dev.local (unsafe) to bypass SSL warning in Chrome.
-# Click the Lock (next to URL address) > Certificate Information
-# Click Details tab > Export
-# Enter *dev.local.cer* and save it on the desktop.
-# Click Chrome Settings > Show advanced settings > HTTPS/SSL > Manage Certificates > Trusted Root Certification Authorities tab.
-# Select the certificate.
-# Click the *Import* button.
-# Click Next.
-# Click Browse and select the *dev.local.cer* file on your desktop and click Open.
-# Click the *Next* button.
-# Select *Place all certificates in the following store*
-# Click Browse and select *Trusted Root Certification Authorities*
-# Click Next
-# Click the *Finish* button followed by Yes, OK and Close.
-# Close the *Settings* tab
-# Close and restart Chrome.
+### Chrome
+1. Click on Advanced, then Proceed to dev.local (unsafe) to bypass SSL warning in Chrome.
+1. Click the Lock (next to URL address) > Certificate Information
+1. Click Details tab > Export
+1. Enter *dev.local.cer* and save it on the desktop.
+1. Click Chrome Settings > Show advanced settings > HTTPS/SSL > Manage Certificates > Trusted Root Certification Authorities tab.
+1. Select the certificate.
+1. Click the *Import* button.
+1. Click Next.
+1. Click Browse and select the *dev.local.cer* file on your desktop and click Open.
+1. Click the *Next* button.
+1. Select *Place all certificates in the following store*
+1. Click Browse and select *Trusted Root Certification Authorities*
+1. Click Next
+1. Click the *Finish* button followed by Yes, OK and Close.
+1. Close the *Settings* tab
+1. Close and restart Chrome.
 
-Firefox
-# Click on *I Understand the Risks*, then click on *Add Exception....*
-# Click on *Add Exception*.
-# Click *Confirm Security Exception*.
-# Close and restart Firefox.
+### Firefox
+1. Click on *I Understand the Risks*, then click on *Add Exception....*
+1. Click on *Add Exception*.
+1. Click *Confirm Security Exception*.
+1. Close and restart Firefox.
 
-Internet Explorer
-# Click on *Continue to this website (not recommended)* to bypass SSL warning in Internet Explorer.
-# Click *View certificates*.
-# Click the *Certification Path* tab.
-# Select the root certificate and click *View Certificate*.
-# Click *Install Certificate*
-# Click *Next*
-# Select *Place all certificates in the following store*, click *Browse*, select *Trusted Root Certificate Authorities*, click *OK* and click *Next*.
-# Click *Finish*.
-# Click *Yes*.
-# Click *OK* twice.
-# Close and restart Internet Explorer.
+### Internet Explorer
+1. Click on *Continue to this website (not recommended)* to bypass SSL warning in Internet Explorer.
+1. Click *View certificates*.
+1. Click the *Certification Path* tab.
+1. Select the root certificate and click *View Certificate*.
+1. Click *Install Certificate*
+1. Click *Next*
+1. Select *Place all certificates in the following store*, click *Browse*, select *Trusted Root Certificate Authorities*, click *OK* and click *Next*.
+1. Click *Finish*.
+1. Click *Yes*.
+1. Click *OK* twice.
+1. Close and restart Internet Explorer.
