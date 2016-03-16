@@ -27,5 +27,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.cpus = 1
   end
 
-  config.vm.provision :shell, path: "provision.sh"
+ if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/#{vm_name}/*").empty?
+    print "Enter your Git user name: "
+    username = STDIN.gets.chomp
+    print "Enter your Git email address: "
+    email = STDIN.gets.chomp
+    config.vm.provision :shell, path: "provision.sh", :privileged => true, :args => [username, email]
+  else
+    config.vm.provision :shell, path: "provision.sh", :privileged => true 
+  end
 end
