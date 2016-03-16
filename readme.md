@@ -5,6 +5,8 @@ using the VirtualBox. This is perfect for local testing and development installa
 
 After setup is complete you will have a Moodle LAMP instance running on your local machine.
 
+Status: ALPHA
+
 ## Software Requirements
 
 Make sure your development machine has:

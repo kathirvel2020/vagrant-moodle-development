@@ -1,1 +1,0 @@
-{"virtualbox":{"/var/www":{"create":true,"owner":"www-data","group":"www-data","guestpath":"/var/www","hostpath":"D:/moodlev3","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/moodlev3","disabled":false,"__vagrantfile":true}}}
