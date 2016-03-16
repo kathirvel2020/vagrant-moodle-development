@@ -27,8 +27,8 @@ You will need to add the following line to your host file:
 
     dev.local 192.168.33.33
 
-
 The resulting package will include:
+
 * LAMP (Ubuntu 14.04 LTS 64-bit Linux, Apache, MySQL, PHP)
 * Moodle (latest version)
 * Moodle add-ons including:
@@ -59,7 +59,7 @@ The following commands can be executed from within the mymoodle directory:
 * vagrant halt - shutdown the virtual machine gracefully.
 * vagrant destroy - Deletes the virtual machine.
 
-# Default Credentials
+## Default Credentials
 
 phpMyAdmin:
 
