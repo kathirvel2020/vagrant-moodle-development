@@ -58,25 +58,30 @@ The following commands can be executed from within the mymoodle directory:
 
 # Default Credentials
 
-phpMyAdmin
+phpMyAdmin:
+
     url: https://dev.local/phpmyadmin
     username: root
     password: mysql
 
-Moodle database
+Moodle database:
+
     database: moodle
     username: mdluser
     password: password
 
-Moodle administrator login
+Moodle administrator login:
+
     username: admin
     password: Admin1!
 
 SSH (if using PuTTY or SCP):
+
     username: vagrant
     password: vagrant
 
 Local Files
+
     Moodle site root: moodle
     Moodle data: moodledata
 
