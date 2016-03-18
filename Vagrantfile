@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       vb.cpus = 1
   end
 
- if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/#{vm_name}/*").empty?
+ if Dir.glob("#{File.dirname(__FILE__)}/.vagrant/machines/#{"+vb.name+"}/*").empty?
     print "Enter your Git user name: "
     username = STDIN.gets.chomp
     print "Enter your Git email address: "
