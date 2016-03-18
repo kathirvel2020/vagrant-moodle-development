@@ -39,6 +39,8 @@ The resulting package will include:
   * Theme: Bootstrap
   * Language Pack: French
   * Language Pack: French Canadian
+* Moodle MDK
+* Moodle Moosh
 * Boris
 * Mercurial SVN
 * Git
@@ -183,7 +185,7 @@ There are 3 quick steps required to completely uninstall Vagrant Moodle Developm
 
 ## Motivation
 
-The development of this plugin was motivated by the authors web development efforts and is supported by TNG Consulting Inc.
+The development of this script was motivated by the author's own web development efforts and is supported by TNG Consulting Inc.
 
 ## Further information
 
@@ -215,4 +217,4 @@ Some ideas we are toying with for the future include adding the ability to do th
 * [How to install Moodle via Git with Postgres, Nginx, PHP on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-install-moodle-via-git-with-postgres-nginx-and-php-on-an-ubuntu-12-04-vps)
 * [How to install Moodle on Ubuntu using Nginx](http://www.techoism.com/how-to-install-moodle-on-ubuntu-using-nginx/)
 * [Apache and PHP limits and timeouts](https://www.devside.net/wamp-server/apache-and-php-limits-and-timeouts)
-
+* https://github.com/digitalsparky/moodle-vagrant

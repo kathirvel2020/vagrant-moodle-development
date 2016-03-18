@@ -4,7 +4,7 @@ WEBSERVER='apache'  # 'apache' OR 'nginx' (not implemented yet)
 MYROOTUSER='root'
 MYROOTPASS='dbpass'
 HOST='dev.local'
-DBTYPE='mysqli'  # 'mysqli' OR 'pgsql' (untested)
+DBTYPE='mysqli'  # 'mysqli' OR 'pgsql' (untested) or 'mariadb' (not implemented yet)
 DBHOST='localhost'
 DBNAME='moodle'
 DBUSER='mdluser'
@@ -90,6 +90,9 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
 EOF
 
 if [ "$WEBSERVER" == "nginx" ]; then
+    # =========================================
+    echo "${BOLD}Installing Nginx...${NC}"
+    # =========================================
     echo "${RED}Nginx has not been implemented yet. Using Apache instead...${NC}"
     WEBSERVER="apache"
 fi
@@ -115,10 +118,6 @@ if [ "$WEBSERVER" == "apache" ]; then
     cp -f /vagrant/config/000-default.conf /etc/apache2/sites-enabled/
     
     alias restartweb='service apache2 restart'
-fi
-
-if [ "$WEBSERVER" == "nginx" ]; then
-    echo "Nginx has not been implemented yet. Using Apache instead..."    
 fi
 
 # =========================================
@@ -176,6 +175,14 @@ echo "${BOLD}Restarting $WEBSERVER...${NC}"
 # =========================================
 restartweb
 
+if [ "$DBTYPE" == "mariadb" ]; then # MariaDB
+    # =========================================
+    echo "${BOLD}Installing MariaDB...${NC}"
+    # =========================================
+    echo "${RED}MariaDB has not been implemented yet. Using MySQL instead...${NC}"
+    DBTYPE="mysqli"
+fi
+
 if [ "$DBTYPE" == "mysqli" ]; then # MySQL
     # =========================================
     echo "${BOLD}Installing MySQL...${NC}"
@@ -200,6 +207,28 @@ if [ "$DBTYPE" == "mysqli" ]; then # MySQL
     mysql -u $MYROOTUSER -p$MYROOTPASS -e "
         UPDATE mysql.user set user = '${MYROOTUSER}' where user = 'root';
         FLUSH PRIVILEGES;"
+    # =========================================
+    echo  "${BOLD}Installing Moodle MDK...${NC}"
+    # =========================================
+    git clone git://github.com/FMCorz/mdk.git /usr/local/moodle-sdk
+    apt-get install python-pip libmysqlclient-dev libpq-dev python-dev
+    python setup.py develop
+    mdk init
+    ln -s /usr/local/moodle-sdk/extra/bash_completion /etc/bash_completion.d/moodle-sdk
+    cat <<EOF >> ~/.bashrc
+if [ -f /usr/local/moodle-sdk/extra/goto_instance ]; then
+    . /usr/local/moodle-sdk/extra/goto_instance
+    . /usr/local/moodle-sdk/extra/goto_instance.bash_completion
+fi
+EOF
+
+    # =========================================
+    echo  "${BOLD}Installing Moodle MOOSH...${NC}"
+    # =========================================
+    apt-add-repository ppa:zabuch/ppa
+    apt-get update
+    apt-get install moosh
+    
     # =========================================
     echo  "${BOLD}Installing phpMyAdmin...${NC}"
     # =========================================
