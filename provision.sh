@@ -21,6 +21,11 @@ TIMEZONE="America\/Toronto"
 : ${BOLD='\033[1;33m'}
 : ${RED='\033[1;31m'}
 : ${NC='\033[0m'} # No Color
+# Removed colour escape codes as it doesn't seem to be supported.
+: ${BOLD=''}
+: ${RED=''}
+: ${NC=''} # No Color
+
 
 # Exit on detecting a Moodle config.php
 if [ -f ${MOODLE}/config.php ]; then
